@@ -3,7 +3,6 @@
 
 
 
-/* Define C function */
  
 unsigned long int c_factorial(unsigned long int n)
 {
@@ -15,7 +14,6 @@ unsigned long int c_factorial(unsigned long int n)
 
 
 
-/* Link C function to *PyObject via PyBuildValue */
 
 static PyObject* factorial(PyObject* self, PyObject* args)
 {
