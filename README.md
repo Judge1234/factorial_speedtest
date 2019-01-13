@@ -1,4 +1,4 @@
-<P ALIGN=CENTER>A factorial recursion speed test showdown between Python, Cython and C-optimized Python</P>
+<h4>A factorial recursion speed test showdown between Python, Cython and C-optimized Python</h4>
 
 10 Million Calculations of factorial(20)
 
