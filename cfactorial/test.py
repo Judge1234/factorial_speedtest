@@ -1,3 +1,6 @@
+import warnings; warnings.filterwarnings("ignore")
+import pyximport; pyximport.install()
+import factorialfastimport as _cython
 import time
 import cfactorial
 
@@ -36,6 +39,14 @@ N_FACTORIAL = 20
 def py_test():
     for i in range(SAMPLE_SIZE):
         python_factorial(N_FACTORIAL)
+
+
+
+@TimerWrapper
+def cy_test():
+    for i in range(SAMPLE_SIZE):
+        _cython.cython_factorial(N_FACTORIAL)
+        
         
         
 @TimerWrapper
@@ -48,5 +59,6 @@ def C_test():
         
 if __name__ == '__main__':
     py_test()
+    cy_test()
     C_test()
     
