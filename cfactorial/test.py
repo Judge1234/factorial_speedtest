@@ -1,11 +1,10 @@
 import time
-from cfactorial import factorial
+import cfactorial
 
 
 
 
-#   Timing decorator for measuring the speed of each function
-
+#   Timing decorator to measure the performance of each function
 class TimerWrapper:
     def __init__(self, f):
         self.f = f
@@ -21,36 +20,33 @@ class TimerWrapper:
 
 
 #   Main python factorial function
-
 def python_factorial(n):
     if n < 1:
         return 1
     else:
         return n * python_factorial(n - 1)
-
-
-
-
-#   Factorial functions called from parent functions to avoid recursive timing
+    
+    
+    
 
 SAMPLE_SIZE = 10000000
 N_FACTORIAL = 20
 
 @TimerWrapper
-def python_execute():
+def py_test():
     for i in range(SAMPLE_SIZE):
         python_factorial(N_FACTORIAL)
-
-
+        
+        
 @TimerWrapper
-def c_execute():
+def C_test():
     for i in range(SAMPLE_SIZE):
-        factorial(N_FACTORIAL)
+        cfactorial.factorial(N_FACTORIAL)
 
-
-
-
+        
+        
+        
 if __name__ == '__main__':
-    python_execute()
-    c_execute()
+    py_test()
+    C_test()
     
